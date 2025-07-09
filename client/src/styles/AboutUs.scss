@@ -1,0 +1,203 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.about-hero {
+  position: relative;
+  height: 60vh;
+  background-image: url("../../public/assets/slide.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .MuiContainer-root {
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+  
+  .hero-title {
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-subtitle {
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.about-section {
+  padding: 60px 0;
+  
+  .section-title {
+    text-align: center;
+    color: $blue;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+  
+  .story-content {
+    margin-bottom: 20px;
+    
+    .story-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.values-section {
+  background-color: rgba($lightgrey, 0.3);
+  padding: 60px 0;
+  
+  .section-title {
+    text-align: center;
+    color: $blue;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+  
+  .values-grid {
+    .value-card {
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+      }
+      
+      .value-icon {
+        margin-bottom: 16px;
+        
+        svg {
+          font-size: 40px;
+          color: $pinkred;
+        }
+      }
+      
+      .value-title {
+        color: $blue;
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+.team-section {
+  .team-grid {
+    .team-card {
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      
+      .team-avatar {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 16px;
+      }
+      
+      .team-name {
+        color: $blue;
+        margin-bottom: 4px;
+      }
+      
+      .team-role {
+        color: $pinkred;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+      
+      .team-bio {
+        color: $darkgrey;
+      }
+    }
+  }
+}
+
+.stats-section {
+  background-color: $blue;
+  color: white;
+  padding: 60px 0;
+  
+  .stats-grid {
+    .stat-item {
+      text-align: center;
+      
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: white;
+      }
+      
+      .stat-label {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}
+
+@include md {
+  .about-hero {
+    height: 50vh;
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .stat-item {
+    .stat-number {
+      font-size: 2.5rem !important;
+    }
+  }
+}
+
+@include sm {
+  .about-hero {
+    height: 40vh;
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+  
+  .about-section, .values-section, .stats-section {
+    padding: 40px 0;
+  }
+} 

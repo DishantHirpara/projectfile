@@ -1,0 +1,117 @@
+@import "./variables.scss";
+
+.listing-card {
+  position: relative;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 12px;
+  background: white;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    @include shadow;
+    transform: translateY(-5px);
+  }
+
+  .slider-container {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 12px;
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+
+      .slide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 270px;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: brightness(90%);
+        }
+
+        .prev-button,
+        .next-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 8px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(255, 255, 255, 0.8);
+          z-index: 9999;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+          &:hover {
+            background-color: white;
+          }
+        }
+
+        .prev-button {
+          left: 10px;
+        }
+
+        .next-button {
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 0 0 8px;
+    color: #333;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 4px 0;
+    color: #666;
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .favorite {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 999;
+    background: none;
+    padding: 0;
+  }
+  
+  .payment-status {
+    margin-top: 8px;
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+    
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

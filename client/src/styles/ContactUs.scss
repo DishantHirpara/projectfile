@@ -1,0 +1,59 @@
+@import "./variables.scss";
+
+.contact-us-container {
+  padding: 40px 20px 80px;
+
+  .page-title {
+    text-align: center;
+    color: $blue;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+
+  .contact-content {
+    display: flex;
+    gap: 30px;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+    
+    .contact-info {
+      flex: 1;
+      padding: 30px;
+      background-color: rgba($pinkred, 0.05);
+      
+      .contact-detail {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        
+        svg {
+          color: $pinkred;
+          margin-right: 10px;
+        }
+      }
+    }
+    
+    .contact-form {
+      flex: 2;
+      padding: 30px;
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        
+        .submit-button {
+          margin-top: 20px;
+          background-color: $pinkred;
+          color: white;
+          align-self: flex-start;
+          
+          &:hover {
+            background-color: darken($pinkred, 10%);
+          }
+        }
+      }
+    }
+  }
+} 

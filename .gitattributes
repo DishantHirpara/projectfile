@@ -1,0 +1,19 @@
+# Mark all files in this repository as vendored code (not counted for language statistics or contributions)
+* linguist-vendored=true
+
+# Exclude these files from GitHub language statistics
+*.js linguist-vendored=true
+*.jsx linguist-vendored=true
+*.css linguist-vendored=true
+*.scss linguist-vendored=true
+*.html linguist-vendored=true
+*.json linguist-vendored=true
+
+# Documentation files
+*.md linguist-documentation=true
+*.txt linguist-documentation=true
+
+# Exclude generated files
+build/* linguist-generated=true
+dist/* linguist-generated=true
+node_modules/* linguist-vendored=true 

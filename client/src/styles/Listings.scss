@@ -1,0 +1,165 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.category-list {
+  padding: 30px 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include sm {
+    padding: 30px 20px;
+    gap: 15px;
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $darkgrey;
+    cursor: pointer;
+    min-width: 70px;
+
+    &_icon {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    &:hover {
+      color: $pinkred;
+    }
+  }
+
+  .selected {
+    color: $pinkred;
+  }
+}
+
+.listings-container {
+  padding: 0 60px 120px;
+  max-width: 1240px;
+  margin: 0 auto;
+  
+  @include sm {
+    padding: 0 20px 120px;
+  }
+  
+  .featured-title {
+    margin: 20px 0;
+    padding-left: 10px;
+  }
+}
+
+.listings-row {
+  display: flex;
+  // justify-content: space-between;
+  margin-bottom: 40px;
+  justify-content: center;
+  
+  @include md {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  // Each card in a row should take up 31% width to fit 3 per row with spacing
+  .listing-card {
+    width: 31%;
+    
+    @include md {
+      width: 45%;
+    }
+    
+    @include sm {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.listings-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .slider-item {
+    flex: 0 0 auto;
+    width: 320px;
+    margin-right: 20px;
+    
+    @include lg {
+      width: 300px;
+    }
+    
+    @include md {
+      width: 280px;
+    }
+    
+    @include sm {
+      width: 260px;
+      margin-right: 15px;
+    }
+  }
+}
+
+.slider-nav-button {
+  background-color: white !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  margin: 0 5px !important;
+  
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &:hover:not(.disabled) {
+    background-color: #f8f8f8 !important;
+  }
+}
+
+// Keep the original listings class for backward compatibility
+.listings {
+  padding: 0 60px 120px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include xl {
+    padding: 0 60px 120px;
+    gap: 25px;
+  }
+  
+  @include lg {
+    padding: 0 40px 120px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  @include md {
+    padding: 0 30px 120px;
+  }
+  
+  @include sm {
+    padding: 0 20px 120px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+}
